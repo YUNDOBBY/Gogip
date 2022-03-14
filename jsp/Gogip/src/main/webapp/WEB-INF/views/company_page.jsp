@@ -22,7 +22,8 @@ table {
 	border-collapse: collapse;
 	width: 100%;
 	text-align: center;
-	margin-top: 110px;
+	margin-top: 170px;
+	margin-bottom: 150px
 }
 
 tr {
@@ -40,14 +41,21 @@ h3 {
 	width: 1180px;
 }
 
-.commu-nav {
-	display: flex;
-}
-
 .commu-content nav ul {
 	display: flex;
 	flex-direction: row;
-	background: #999;
+	background: rgb(203, 141, 143);
+
+}
+
+.commu-content nav ul li {
+	width: 25%;
+	text-align: center;
+}
+
+nav .company {
+	background-color: white;
+	padding: 10px 50px 10px 50px;
 }
 
 li {
@@ -89,8 +97,10 @@ li {
 	margin-top: 40px;
 	margin-left: 25%;
 }
-section a{
+
+section a {
 	color: black;
+	font-size: 20px;
 }
 
 .title-link {
@@ -114,18 +124,13 @@ section a{
 		<section class=commu-content>
 			<nav id="commu-nav">
 				<ul>
-					<li><a href="post_page.do">게시글 관리</a>
-					<li><a href="comment_page.do">댓글 관리</a>
-					<li><a href="member_page.do">회원 관리</a>
-					<li><a href="company_page.do">업체 관리</a>
-					<li><a href="report_page.do">신고 관리</a>
+					<li><a class="post" href="post_page.do">게시글 관리</a>
+					<li><a class="comment" href="comment_page.do">댓글 관리</a>
+					<li><a class="member" href="member_page.do">회원 관리</a>
+					<li><a class="company" href="company_page.do">업체 관리</a>
+					<li><a class="report" href="report_page.do">신고 관리</a>
 				</ul>
 			</nav>
-			<article>
-				<section class="commu-left">
-					<div></div>
-				</section>
-			</article>
 			<article class="request-body">
 				<div class="board-list">
 					<table>
@@ -157,13 +162,13 @@ section a{
 				</div>
 				<div class="board-bottom">
 					<ul id="paging">
-						<li><a class="pre-btn disabled" href="report_page.do">이전</a></li>
-						<li><a class="page1-btn" href="report_page.do">1</a></li>
-						<li><a class="page2-btn" href="report_page.do">2</a></li>
-						<li><a class="page3-btn" href="report_page.do">3</a></li>
-						<li><a class="page4-btn" href="report_page.do">4</a></li>
-						<li><a class="page5-btn" href="report_page.do">5</a></li>
-						<li><a class="next-btn" href="report_page.do">다음</a></li>
+						<li><a>이전</a></li>
+						<li><a>1</a></li>
+						<li><a>2</a></li>
+						<li><a>3</a></li>
+						<li><a>4</a></li>
+						<li><a>5</a></li>
+						<li><a>다음</a></li>
 					</ul>
 				</div>
 			</article>

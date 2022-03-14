@@ -6,6 +6,8 @@
 <head>
 <meta charset="UTF-8">
 <title>관리</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <style>
 * {
 	margin: 0px;
@@ -20,11 +22,13 @@ table {
 	border-collapse: collapse;
 	width: 100%;
 	text-align: center;
-	margin-top: 110px;
+	margin-top: 170px;
+	margin-bottom: 150px
 }
 
 tr {
 	border-bottom: 1px solid black;
+	font-size: 16px;
 }
 
 h3 {
@@ -37,14 +41,20 @@ h3 {
 	width: 1180px;
 }
 
-.commu-nav {
-	display: flex;
-}
-
 .commu-content nav ul {
 	display: flex;
 	flex-direction: row;
-	background: #888;
+	background: rgb(203, 141, 143);
+}
+
+.commu-content nav ul li {
+	width: 25%;
+	text-align: center;
+}
+
+nav .report {
+	background-color: white;
+	padding: 10px 20px 10px 20px;
 }
 
 li {
@@ -52,7 +62,7 @@ li {
 	position: relative;
 	line-height: 40px;
 	float: left;
-	padding: 0 30px;
+	padding: 0 15px;
 }
 
 .num {
@@ -86,26 +96,40 @@ li {
 	margin-top: 40px;
 	margin-left: 25%;
 }
+
+section a {
+	color: black;
+	font-size: 20px;
+}
+
+.title-link {
+	display: block;
+}
 </style>
+<script>
+	$(function() {
+		$("content-title").click(function() {
+			location.href = 'post_page.do';
+		});
+	});
+</script>
 </head>
 <body>
+	<header>
+		<%@include file="/WEB-INF/views/head.jsp"%>
+	</header>
 	<div class="commu-wrap">
 		<h3>관리자 페이지</h3>
 		<section class=commu-content>
 			<nav id="commu-nav">
 				<ul>
-					<li><a href="post_page.do">게시글 관리</a>
-					<li><a href="comment_page.do">댓글 관리</a>
-					<li><a href="member_page.do">회원 관리</a>
-					<li><a href="company_page.do">업체 관리</a>
-					<li><a href="etc_page.do">기타</a>
+					<li><a class="post" href="post_page.do">게시글 관리</a>
+					<li><a class="comment" href="comment_page.do">댓글 관리</a>
+					<li><a class="member" href="member_page.do">회원 관리</a>
+					<li><a class="company" href="company_page.do">업체 관리</a>
+					<li><a class="report" href="report_page.do">신고 관리</a>
 				</ul>
 			</nav>
-			<article>
-				<section class="commu-left">
-					<div></div>
-				</section>
-			</article>
 			<article class="request-body">
 				<div class="board-list">
 					<table>
@@ -124,30 +148,33 @@ li {
 									<td class="content-title">
 										<div class="text-wrap"></div>
 										<div>
-											<span con-icon board-img photo></span>
-										</div> Hello Java! <img src="/img/title_img.png">
+											<span con-icon board-img photo></span> <a class="title-link"
+												href="report_page.do">
+										</div> Hello Java! <img src="/img/title_img.png"> </a>
 									</td>
 									<td class="user"><span class="user">윤혁준</span></td>
 									<td class="date">01:27</td>
 								</tr>
-
 							</c:forEach>
 						</tbody>
 					</table>
 				</div>
 				<div class="board-bottom">
 					<ul id="paging">
-						<li><a class="pre-btn disabled">이전</a></li>
+						<li><a>이전</a></li>
 						<li><a>1</a></li>
 						<li><a>2</a></li>
 						<li><a>3</a></li>
 						<li><a>4</a></li>
 						<li><a>5</a></li>
-						<li><a class="next-btn">다음</a></li>
+						<li><a>다음</a></li>
 					</ul>
 				</div>
 			</article>
 		</section>
+		<footer>
+			<%@include file="/WEB-INF/views/foot.jsp"%>
+		</footer>
 	</div>
 </body>
 </html>
